@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    <link rel="stylesheet" href="{% static 'css/Viva_interface.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <p>Please upload a file (supported formats: .doc, .docx, .txt, .pdf):</p>
+            <label for="file-upload" class="custom-file-upload">
+                <i class="fa fa-upload"></i> Upload File
+            </label>
+            <input type="file" id="file-upload" accept=".doc,.docx,.txt,.pdf">
+            <button id="generate-question">Generate Question</button>
+            <!-- Logout Button -->
+            <button id="logout-button">Logout</button>
+        </div>
+        <div class="right-side">
+            <div class="chatbot">
+                <div class="chatbot-messages" id="chatbot-messages">
+                    <!-- Chat messages will appear here -->
+                </div>
+                <div class="chatbot-input">
+                    <input type="text" id="user-input" placeholder="Type a message...">
+                    <button id="send-button"><i class="fas fa-microphone"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/Viva_interface.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the top */
+    height: 100vh;
+    background: url('path-to-your-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.left-side {
+    background: linear-gradient(135deg, #000000, #171719);
+    color: #fff;
+    width: 20%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Start aligning items from the top */
+    align-items: center;
+    text-align: center;
+}
+
+.left-side p {
+    margin: 107px 0;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+}
+
+.custom-file-upload:hover,
+.left-side button:hover {
+    background-color: #808080; /* Grey color on hover */
+}
+
+.custom-file-upload i {
+    margin-right: 10px;
+}
+
+.left-side input[type="file"] {
+    display: none;
+}
+
+.left-side button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: red; /* Keep background red for buttons */
+    color: #fff; /* White text for buttons */
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.right-side {
+    background-color: #fff;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chatbot {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chatbot-input {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    border-top: none; /* Remove the horizontal line */
+}
+
+.chatbot-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1em;
+}
+
+.chatbot-input button {
+    padding: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 43%;
+    cursor: pointer;
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatbot-input button i {
+    font-size: 1.2em;
+}
+
+#logout-button {
+    background-color: red; /* Red color for Logout */
+    color: black; /* Black text color */
+    margin-top: auto; /* Push to the bottom */
+    padding: 10px 20px; /* Ensure padding for the button */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-transform: uppercase; /* Uppercase text */
+}
+
+#logout-button:hover {
+    background-color: darkred; /* Darker red on hover */
+}
