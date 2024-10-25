@@ -6,7 +6,10 @@ from django.http import JsonResponse
 import shutil  # Import shutil to delete directories
 from django.core.files.storage import default_storage  # Import storage to handle file saving
 
-
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
+from django.contrib import messages
 import os
 import json
 from django.conf import settings  # To access BASE_DIR
@@ -189,6 +192,47 @@ def rag_compare(request):
 # Create your views here.
 def home(request):
     return render(request, 'VivaApp/index.html')
+
+
+def signup_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "Username already exists.")
+            return redirect('sign_log')  # Adjust the URL name as needed
+
+        # Create a new user
+        user = User.objects.create_user(username=username, email=email, password=password)
+        user.save()
+        messages.success(request, "Account created successfully. You can now log in.")
+        return redirect('sign_log')  # Redirect to the login page
+
+    return render(request, 'VivaApp/signup_login.html')
+
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        # print(username,password)
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('Viva_inter')  # Adjust the URL name as needed
+        else:
+            messages.error(request, "Invalid username or password.")
+            return redirect('sign_log')  # Redirect back to the login page
+
+    return render(request, 'VivaApp/signup_login.html')
+
+def logout_view(request):
+    logout(request)
+    messages.success(request, "You have been logged out.")
+    return redirect('home')  # Redirect to the login page
+
 
 def signup_login(request):
     return render(request, 'VivaApp/signup_login.html')

@@ -21,7 +21,10 @@
             <input type="file" id="file-upload" accept=".doc,.docx,.txt,.pdf">
             <button id="generate-question">Generate Question</button>
             <!-- Logout Button -->
-            <button id="logout-button">Logout</button>
+            <form action="{% url 'logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" id="logout-button">Logout</button>
+            </form>
         </div>
         <div class="right-side">
             <div class="chatbot">
