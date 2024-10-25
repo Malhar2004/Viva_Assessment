@@ -142,6 +142,15 @@ form button:hover {
   transform: translateX(-20%);
 }
 
+.overlay-panel h1 {
+  font-family: 'Cambria', serif; /* Set the font to Cambria for h1 elements */
+}
+
+.overlay-panel.overlay-right p {
+  margin-top: 5px; /* Adjust this value to increase or decrease the space */
+}
+
+
 .container.right-panel-active .overlay-left {
   transform: translateX(0);
 }

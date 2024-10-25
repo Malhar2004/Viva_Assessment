@@ -1,8 +1,9 @@
-/* styles.css */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #000;
+    /* background-color: #000; */
+    background: var(--bg-image) no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -91,9 +92,20 @@ body {
 .header h1 {
     font-size: 4em;
     margin: 0;
+    margin-top: -124px;
+    margin-left: -20px; /* Adjust as needed to shift left */
+    color: black; /* Set text color to black */
+    font-family: 'Times New Roman', serif;
 }
 
 .description p {
     font-size: 1.2em;
     margin: 20px 0;
+    padding: 10px; /* Add padding inside the box */
+    color: white; /* Set text color to white */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    border: 1.5px solid white; /* Add a white border */
+    border-radius: 10px; /* Optional: rounded corners */
+    width: fit-content; /* Adjust width to content */
+    margin: 5px auto; /* Center the box */
 }
