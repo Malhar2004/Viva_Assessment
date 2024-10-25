@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: flex-start; /* Align items to the top */
     height: 100vh;
-    background: url('path-to-your-image.jpg') no-repeat center center fixed;
+    background: url("{% static 'images/bg_image.png' %}") no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 .left-side p {
-    margin: 107px 0;
+    margin: 29px 0;
     font-size: 1.2em;
     font-family: 'Roboto', sans-serif;
 }
@@ -89,12 +89,44 @@ body {
     flex: 1;
     padding: 10px;
     overflow-y: auto;
+    /*altered*/
+    display: flex;
+    flex-direction: column;
 }
 
+/*altered*/
+/* Styles for the bot's messages */
+.bot-message {
+    align-self: flex-start;
+    background-color: #f1f1f1;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 60%;
+    font-family: 'Arial', sans-serif;
+    text-align: left;
+}
+/*altered*/
+/* Styles for the user's messages */
+.user-message {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    max-width: 60%;
+    font-family: 'Arial', sans-serif;
+    text-align: right;
+}
 .chatbot-input {
     display: flex;
     align-items: center; /* Align items vertically in the center */
-    border-top: none; /* Remove the horizontal line */
+    /*border-top: none; /* Remove the horizontal line */
+    /*altered*/
+    padding: 10px;
+    border-top: 1px solid #ccc;
 }
 
 .chatbot-input input {
@@ -135,4 +167,50 @@ body {
 
 #logout-button:hover {
     background-color: darkred; /* Darker red on hover */
+}
+
+#score-display {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+#score-value {
+    font-weight: bold;
+}
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center; /* Center text */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
